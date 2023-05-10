@@ -54,12 +54,14 @@ class MyApplication {
         this.app = ApplicationBuilder.build();
     }
 
-    public registerControllers(): void {
+    public registerControllers(): MyApplication {
         this.app.register(TestsController);
+        return this;
     }
 
-    public start(): void {
+    public start(): MyApplication {
         this.app.start();
+        return this;
     }
 }
 

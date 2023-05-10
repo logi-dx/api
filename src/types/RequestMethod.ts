@@ -1,0 +1,1 @@
+export type RequestMethod = 'DELETE' | 'GET' | 'PATCH' | 'POST' | 'PUT';

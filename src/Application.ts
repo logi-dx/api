@@ -51,7 +51,9 @@ export class Application {
   private onStartup(): void {
     this.endpoints.forEach((endpoints: IEndpoint[]) => {
       endpoints.forEach((endpoint: IEndpoint) => {
-        this.registerEndpoint(endpoint);
+        if (endpoint.ready) {
+          this.registerEndpoint(endpoint);
+        }
       });
     });
   }

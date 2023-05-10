@@ -8,4 +8,5 @@ export interface IEndpoint {
   controller: string;
   middleware: Middleware[];
   handler: RequestHandler;
+  ready: boolean;
 }

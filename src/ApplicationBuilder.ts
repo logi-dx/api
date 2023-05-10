@@ -35,6 +35,7 @@ class WebApplicationBuilder {
       controller,
       middleware,
       handler,
+      ready: false
     };
 
     if (!this.endpoints.has(controller)) {
@@ -55,6 +56,7 @@ class WebApplicationBuilder {
     endpoints.forEach((endpoint: IEndpoint) => {
       const hasPath: boolean = endpoint.path.length > 0;
       endpoint.path = hasPath ? `${path}${endpoint.path}` : path;
+      endpoint.ready = true;
     });
   }
 
